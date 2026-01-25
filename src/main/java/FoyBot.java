@@ -1,11 +1,30 @@
+import java.util.Scanner;
+
 public class FoyBot {
     public static void main(String[] args) {
-        System.out.println("""
-                ____________________________________________________________
-                Hello! I'm FoyBot!
-                What can I do for you?
-                ____________________________________________________________
-                Bye. Hope to see you again soon!
-                ____________________________________________________________""");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("____________________________________________________________");
+        System.out.println("Hello! I'm FoyBot!\n" +
+                "What can I do for you?");
+        System.out.println("____________________________________________________________");
+
+
+        while (true) {
+            String input = scanner.nextLine();
+
+            if (input.equals("bye")) {
+                break;
+            }
+
+            System.out.println("    ____________________________________________________________");
+            System.out.println("    " + input);
+            System.out.println("    ____________________________________________________________");
+        }
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    Bye. Hope to see you again soon!");
+        System.out.println("    ____________________________________________________________");
+        scanner.close();
     }
 }
