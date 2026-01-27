@@ -17,8 +17,47 @@ public class FoyBot {
 
         while (true) {
             String input = scanner.nextLine();
-            String[] parts = input.split(" ");
-            String command = parts[0];
+
+
+            if (input.contains("deadline")) { // DeadlineTask
+                String[] parts = input.split("/by");
+
+                String firstPart = parts[0].trim();
+                String deadline = parts[1].trim();
+
+                String[] firstParts = firstPart.split(" ", 2);
+                // String type = firstParts[0];
+                String taskDescription = firstParts[1];
+
+                Task task = new DeadlineTask(taskDescription, deadline);
+                tasks.add(task);
+                // System.out.println("    added: " + task.getDescription());
+            } else if (input.contains("event")) { // EventTask
+                String[] part1 = input.split("/from");
+                String beforeFrom = part1[0].trim();
+                String afterFrom = part1[1];
+
+                String[] part2 = afterFrom.split("/to");
+                String fromTime = part2[0].trim();
+                String toTime = part2[1].trim();
+
+                String[] firstParts = beforeFrom.split(" ", 2);
+                // String type = firstParts[0];
+                String taskDescription = firstParts[1];
+
+                Task task = new EventTask(taskDescription, fromTime, toTime);
+                tasks.add(task);
+                // System.out.println("    added: " + task.getDescription());
+            } else if (input.contains("todo")) { // TodoTask
+                String[] parts = input.split(" ", 2);
+                // String type = parts[0];
+                String taskDescription = parts[1];
+
+                Task task = new TodoTask(taskDescription);
+                tasks.add(task);
+                // System.out.println("    added: " + task.getDescription());
+            }
+
 
             System.out.println("    ________________________________________________________");
 
@@ -34,7 +73,11 @@ public class FoyBot {
                 continue;
             }
 
-            if (command.equals("mark")) {
+            String[] parts = input.split(" ");
+            String markCommand = parts[0];
+
+            // ignores any commands that are not mark/unmark
+            if (markCommand.equals("mark")) {
                 int index = Integer.parseInt(parts[1]) - 1;  // list is 0-based, but users see it as 1-based
                 tasks.get(index).markDone();
                 System.out.println("    Nice! I've marked this task as done:");
@@ -43,7 +86,7 @@ public class FoyBot {
                 continue;
             }
 
-            if (command.equals("unmark")) {
+            if (markCommand.equals("unmark")) {
                 int index = Integer.parseInt(parts[1]) - 1;
                 tasks.get(index).markUndone();
                 System.out.println("    OK, I've marked this task as not done yet:");
@@ -52,9 +95,9 @@ public class FoyBot {
                 continue;
             }
 
-            Task task = new Task(input);
-            tasks.add(task);
-            System.out.println("    added: " + task.getDescription());
+            System.out.println("    Got it. I've added this task:");
+            System.out.println("      " + tasks.get(tasks.size() - 1));
+            System.out.println("    Now you have " + tasks.size() + " tasks in the list.");
             System.out.println("    ________________________________________________________");
         }
 
