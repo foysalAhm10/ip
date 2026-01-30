@@ -1,3 +1,7 @@
+package foybot.tools;
+
+import foybot.tasks.Task;
+
 import java.util.ArrayList;
 
 public class TaskList {

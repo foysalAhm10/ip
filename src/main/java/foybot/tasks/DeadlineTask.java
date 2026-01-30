@@ -1,3 +1,5 @@
+package foybot.tasks;
+
 public class DeadlineTask extends Task {
     protected String deadline;
 

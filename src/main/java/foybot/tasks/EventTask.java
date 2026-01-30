@@ -1,3 +1,5 @@
+package foybot.tasks;
+
 public class EventTask extends Task {
     protected String fromTime;
     protected String toTime;

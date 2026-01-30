@@ -1,3 +1,7 @@
+package foybot.io;
+
+import foybot.tools.TaskList;
+
 public class FoyBotOutput {
     private static final String LINE = "    ____________________________________________________________";
 

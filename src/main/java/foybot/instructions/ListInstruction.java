@@ -1,3 +1,9 @@
+package foybot.instructions;
+
+import foybot.io.FoyBotOutput;
+
+import foybot.tools.TaskList;
+
 public class ListInstruction extends Instruction {
     @Override
     public void execute(TaskList tasks, FoyBotOutput output) {

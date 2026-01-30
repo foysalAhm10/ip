@@ -1,3 +1,11 @@
+package foybot.instructions;
+
+import foybot.io.FoyBotOutput;
+
+import foybot.tasks.DeadlineTask;
+
+import foybot.tools.TaskList;
+
 public class DeadlineInstruction extends Instruction {
     protected DeadlineTask deadlineTask;
 

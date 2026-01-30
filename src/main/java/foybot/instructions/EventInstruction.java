@@ -1,3 +1,11 @@
+package foybot.instructions;
+
+import foybot.io.FoyBotOutput;
+
+import foybot.tasks.EventTask;
+
+import foybot.tools.TaskList;
+
 public class EventInstruction extends Instruction {
     protected EventTask eventTask;
 

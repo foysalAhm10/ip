@@ -1,3 +1,16 @@
+package foybot.io;
+
+import foybot.exception.FoyBotException;
+
+import foybot.instructions.Instruction;
+import foybot.instructions.ByeInstruction;
+import foybot.instructions.DeadlineInstruction;
+import foybot.instructions.EventInstruction;
+import foybot.instructions.ListInstruction;
+import foybot.instructions.MarkInstruction;
+import foybot.instructions.TodoInstruction;
+import foybot.instructions.UnmarkInstruction;
+
 public class FoyBotParser {
 
     public Instruction parse(String input) throws FoyBotException {

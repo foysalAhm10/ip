@@ -1,3 +1,11 @@
+package foybot.instructions;
+
+import foybot.exception.FoyBotException;
+
+import foybot.io.FoyBotOutput;
+
+import foybot.tools.TaskList;
+
 public class UnmarkInstruction extends Instruction {
     protected Integer index;
 
