@@ -1,0 +1,10 @@
+todo bake cake
+event japan trip /from monday /to friday
+deadline eat cake /by 2pm
+list
+mark 1
+list
+unmark 1
+list
+bye
+
