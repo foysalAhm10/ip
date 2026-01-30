@@ -5,6 +5,7 @@ import foybot.exception.FoyBotException;
 import foybot.instructions.Instruction;
 import foybot.instructions.ByeInstruction;
 import foybot.instructions.DeadlineInstruction;
+import foybot.instructions.DeleteInstruction;
 import foybot.instructions.EventInstruction;
 import foybot.instructions.ListInstruction;
 import foybot.instructions.MarkInstruction;
@@ -63,6 +64,12 @@ public class FoyBotParser {
                     throw new FoyBotException("im confused! State which task to unmark.");
                 }
                 return new UnmarkInstruction(rest);
+
+            case "delete":
+                if (rest.isEmpty()) {
+                    throw new FoyBotException("im confused! State which task to delete.");
+                }
+                return new DeleteInstruction(rest);
 
             default:
                 throw new FoyBotException("OOPS!!! I don't understand this instruction yet :-(");

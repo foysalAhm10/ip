@@ -22,7 +22,7 @@ public class DeadlineInstruction extends Instruction {
         tasks.addTask(this.deadlineTask);
         output.showLine();
         output.showMessage("Got it. I've added this task:");
-        output.showMessage(this.deadlineTask.toString());
+        output.showMessage("    " + this.deadlineTask.toString());
         output.showMessage("Now you have " + tasks.size() + " tasks in the list.");
         output.showLine();
     }

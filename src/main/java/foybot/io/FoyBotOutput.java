@@ -28,20 +28,6 @@ public class FoyBotOutput {
         }
     }
 
-    public void showMark(TaskList tasks, Integer idx) {
-        showLine();
-        System.out.println("    Nice! I've marked this task as done:");
-        System.out.println("        " + tasks.get(idx));
-        showLine();
-    }
-
-    public void showUnmark(TaskList tasks, Integer idx) {
-        showLine();
-        System.out.println("    OK, I've marked this task as not done yet:");
-        System.out.println("        " + tasks.get(idx));
-        showLine();
-    }
-
     public void showError(String message) {
         showLine();
         System.out.println("     " + message);

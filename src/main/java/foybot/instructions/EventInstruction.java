@@ -24,7 +24,7 @@ public class EventInstruction extends Instruction {
         tasks.addTask(this.eventTask);
         output.showLine();
         output.showMessage("Got it. I've added this task:");
-        output.showMessage(this.eventTask.toString());
+        output.showMessage("    " + this.eventTask.toString());
         output.showMessage("Now you have " + tasks.size() + " tasks in the list.");
         output.showLine();
     }

@@ -18,4 +18,8 @@ public class TaskList {
     public Task get(int i) {
         return tasks.get(i);
     }
+
+    public void delete(int i) {
+        tasks.remove(i);
+    }
 }
