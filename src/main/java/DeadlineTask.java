@@ -1,13 +1,13 @@
 public class DeadlineTask extends Task {
-    protected String by;
+    protected String deadline;
 
-    public DeadlineTask(String description, String by) {
+    public DeadlineTask(String description, String deadline) {
         super(description);
-        this.by = by;
+        this.deadline = deadline;
     }
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by: " + by + ")";
+        return "[D]" + super.toString() + " (by: " + deadline + ")";
     }
 }

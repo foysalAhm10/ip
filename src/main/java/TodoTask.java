@@ -8,4 +8,3 @@ public class TodoTask extends Task {
         return "[T]" + super.toString();
     }
 }
-
