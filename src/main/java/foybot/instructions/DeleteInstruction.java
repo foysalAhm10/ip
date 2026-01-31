@@ -5,7 +5,7 @@ import foybot.io.FoyBotOutput;
 import foybot.tasks.Task;
 import foybot.tools.TaskList;
 
-public class DeleteInstruction extends Instruction{
+public class DeleteInstruction extends Instruction {
     protected Integer index;
 
     public DeleteInstruction(String cleanInput) {

@@ -4,17 +4,17 @@
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
-    [T][ ] bake cake
+        [T][ ] bake cake
     Now you have 1 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
-    [E][ ] japan trip (from: monday to: friday)
+        [E][ ] japan trip (from: monday to: friday)
     Now you have 2 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
-    [D][ ] eat cake  (by:  2pm)
+        [D][ ] eat cake  (by:  2pm)
     Now you have 3 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
@@ -38,10 +38,14 @@
         [T][ ] bake cake
     ____________________________________________________________
     ____________________________________________________________
+    Noted. I've removed this task:
+        [E][ ] japan trip (from: monday to: friday)
+    Now you have 2 tasks in the list.
+    ____________________________________________________________
+    ____________________________________________________________
     Here are the tasks in your list:
     1. [T][ ] bake cake
-    2. [E][ ] japan trip (from: monday to: friday)
-    3. [D][ ] eat cake  (by:  2pm)
+    2. [D][ ] eat cake  (by:  2pm)
     ____________________________________________________________
     Bye. Hope to see you again soon!
     ____________________________________________________________
