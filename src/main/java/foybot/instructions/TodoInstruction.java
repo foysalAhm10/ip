@@ -22,4 +22,10 @@ public class TodoInstruction extends Instruction {
         output.showMessage("Now you have " + tasks.size() + " tasks in the list.");
         output.showLine();
     }
+
+    @Override
+    public boolean isMutating() {
+        return true;
+    }
+
 }

@@ -27,4 +27,10 @@ public class MarkInstruction extends Instruction {
             output.showLine();
         }
     }
+
+    @Override
+    public boolean isMutating() {
+        return true;
+    }
+
 }

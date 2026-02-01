@@ -10,6 +10,10 @@ public class EventTask extends Task {
         this.toTime = toTime;
     }
 
+    public String getFromTo() {
+        return this.fromTime + "-"  + this.toTime;
+    }
+
     @Override
     public String toString() {
         return "[E]" + super.toString() + " (from: " + fromTime + " to: " + toTime + ")";
