@@ -28,4 +28,10 @@ public class UnmarkInstruction extends Instruction {
         }
 
     }
+
+    @Override
+    public boolean isMutating() {
+        return true;
+    }
+
 }

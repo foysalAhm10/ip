@@ -28,4 +28,9 @@ public class DeleteInstruction extends Instruction {
             output.showLine();
         }
     }
+
+    @Override
+    public boolean isMutating() {
+        return true;
+    }
 }

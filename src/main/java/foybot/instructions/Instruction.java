@@ -12,4 +12,8 @@ public abstract class Instruction {
     public boolean isExit() {
         return false;
     }
+
+    public boolean isMutating() {
+        return false;
+    }
 }

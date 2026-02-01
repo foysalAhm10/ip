@@ -5,7 +5,15 @@ import foybot.tasks.Task;
 import java.util.ArrayList;
 
 public class TaskList {
-    private final ArrayList<Task> tasks = new ArrayList<>();
+    private final ArrayList<Task> tasks;
+
+    public TaskList() {
+        this.tasks = new ArrayList<>();
+    }
+
+    public TaskList(ArrayList<Task> tasks) {
+        this.tasks = tasks;
+    }
 
     public void addTask(Task task) {
         tasks.add(task);
@@ -21,5 +29,9 @@ public class TaskList {
 
     public void delete(int i) {
         tasks.remove(i);
+    }
+
+    public ArrayList<Task> getTasks() {
+        return tasks;
     }
 }
