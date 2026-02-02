@@ -1,13 +1,13 @@
 package foybot.instructions;
 
-import foybot.io.FoyBotOutput;
+import foybot.io.Ui;
 
 import foybot.tools.TaskList;
 
 public class ByeInstruction extends Instruction {
     @Override
-    public void execute(TaskList tasks, FoyBotOutput output) {
-        output.showBye();
+    public void execute(TaskList tasks, Ui ui) {
+        ui.showBye();
     }
 
     @Override

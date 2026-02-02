@@ -2,7 +2,7 @@ import foybot.exception.FoyBotException;
 
 import foybot.instructions.Instruction;
 
-import foybot.io.FoyBotOutput;
+import foybot.io.Ui;
 import foybot.io.FoyBotParser;
 
 import foybot.tools.Storage;
@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class FoyBot {
     public static void main(String[] args) {
-        FoyBotOutput output = new FoyBotOutput();
+        Ui ui = new Ui();
         FoyBotParser parser = new FoyBotParser();
         TaskList tasks;
         Scanner scanner = new Scanner(System.in);
@@ -24,10 +24,10 @@ public class FoyBot {
         } catch (FoyBotException e) {
             System.out.println("Error: " + e.getMessage());
             tasks = new TaskList();
-            output.showError("Could not load saved tasks. Starting fresh.");
+            ui.showError("Could not load saved tasks. Starting fresh.");
         }
 
-        output.showWelcome();
+        ui.showWelcome();
 
         boolean isExit = false;
         while (!isExit) {
@@ -35,7 +35,7 @@ public class FoyBot {
 
             try {
                 Instruction instruction = parser.parse(input);
-                instruction.execute(tasks, output);
+                instruction.execute(tasks, ui);
 
                 if (instruction.isMutating()) {
                     storage.save(tasks.getTasks());
@@ -43,9 +43,9 @@ public class FoyBot {
 
                 isExit = instruction.isExit();
             } catch (FoyBotException fbe) {
-                output.showError(fbe.getMessage());
+                ui.showError(fbe.getMessage());
             } catch (Exception e) {
-                output.showError("FoyBot missed this error: " + e.getMessage());
+                ui.showError("FoyBot missed this error: " + e.getMessage());
             }
         }
 

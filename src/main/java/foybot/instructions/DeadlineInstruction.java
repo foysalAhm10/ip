@@ -1,7 +1,7 @@
 package foybot.instructions;
 
 import foybot.exception.FoyBotException;
-import foybot.io.FoyBotOutput;
+import foybot.io.Ui;
 
 import foybot.tasks.DeadlineTask;
 
@@ -30,13 +30,13 @@ public class DeadlineInstruction extends Instruction {
     }
 
     @Override
-    public void execute(TaskList tasks, FoyBotOutput output) {
+    public void execute(TaskList tasks, Ui ui) {
         tasks.addTask(this.deadlineTask);
-        output.showLine();
-        output.showMessage("Got it. I've added this task:");
-        output.showMessage("    " + this.deadlineTask.toString());
-        output.showMessage("Now you have " + tasks.size() + " tasks in the list.");
-        output.showLine();
+        ui.showLine();
+        ui.showMessage("Got it. I've added this task:");
+        ui.showMessage("    " + this.deadlineTask.toString());
+        ui.showMessage("Now you have " + tasks.size() + " tasks in the list.");
+        ui.showLine();
     }
 
     @Override
