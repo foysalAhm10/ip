@@ -2,7 +2,7 @@ package foybot.io;
 
 import foybot.tools.TaskList;
 
-public class FoyBotOutput {
+public class Ui {
     private static final String LINE = "    ____________________________________________________________";
 
     public void showLine() {

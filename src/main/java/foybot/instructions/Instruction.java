@@ -2,12 +2,12 @@ package foybot.instructions;
 
 import foybot.exception.FoyBotException;
 
-import foybot.io.FoyBotOutput;
+import foybot.io.Ui;
 
 import foybot.tools.TaskList;
 
 public abstract class Instruction {
-    public abstract void execute(TaskList tasks, FoyBotOutput output) throws FoyBotException;
+    public abstract void execute(TaskList tasks, Ui ui) throws FoyBotException;
 
     public boolean isExit() {
         return false;
