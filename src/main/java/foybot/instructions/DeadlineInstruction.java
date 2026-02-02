@@ -11,7 +11,7 @@ public class DeadlineInstruction extends Instruction {
     protected DeadlineTask deadlineTask;
 
     public DeadlineInstruction(String cleanInput) throws FoyBotException {
-        // format of instruction: do homework /by 2026-03-01
+        // format of instruction: create website /by 2026-03-01
         String[] parts = cleanInput.split("/by");
 
         if (parts.length != 2) {
