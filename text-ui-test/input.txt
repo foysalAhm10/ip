@@ -1,6 +1,6 @@
 todo bake cake
-event japan trip /from monday /to friday
-deadline eat cake /by 2pm
+event japan trip /from 2005-01-01 /to 2005-02-01
+deadline eat cake /by 2006-01-01
 list
 mark 1
 list

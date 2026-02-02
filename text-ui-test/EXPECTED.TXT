@@ -9,19 +9,19 @@
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
-        [E][ ] japan trip (from: monday to: friday)
+        [E][ ] japan trip (from: Jan 01 2005 to: Feb 01 2005)
     Now you have 2 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
-        [D][ ] eat cake  (by:  2pm)
+        [D][ ] eat cake (by: Jan 01 2006)
     Now you have 3 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][ ] bake cake
-    2. [E][ ] japan trip (from: monday to: friday)
-    3. [D][ ] eat cake  (by:  2pm)
+    2. [E][ ] japan trip (from: Jan 01 2005 to: Feb 01 2005)
+    3. [D][ ] eat cake (by: Jan 01 2006)
     ____________________________________________________________
     ____________________________________________________________
     Nice! I've marked this task as done:
@@ -30,8 +30,8 @@
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][X] bake cake
-    2. [E][ ] japan trip (from: monday to: friday)
-    3. [D][ ] eat cake  (by:  2pm)
+    2. [E][ ] japan trip (from: Jan 01 2005 to: Feb 01 2005)
+    3. [D][ ] eat cake (by: Jan 01 2006)
     ____________________________________________________________
     ____________________________________________________________
     OK, I've marked this task as not done yet:
@@ -39,13 +39,13 @@
     ____________________________________________________________
     ____________________________________________________________
     Noted. I've removed this task:
-        [E][ ] japan trip (from: monday to: friday)
+        [E][ ] japan trip (from: Jan 01 2005 to: Feb 01 2005)
     Now you have 2 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][ ] bake cake
-    2. [D][ ] eat cake  (by:  2pm)
+    2. [D][ ] eat cake (by: Jan 01 2006)
     ____________________________________________________________
     Bye. Hope to see you again soon!
     ____________________________________________________________
