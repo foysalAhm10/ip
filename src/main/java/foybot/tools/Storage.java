@@ -53,7 +53,7 @@ public class Storage {
 
             ArrayList<String> lines = new ArrayList<>();
             for (Task t : tasks) {
-                lines.add(parseTaskToLine(t));
+                lines.add(taskToLine(t));
             }
 
             Files.write(filePath, lines);
@@ -97,7 +97,7 @@ public class Storage {
             if (parts.length < 4) {
                 throw new FoyBotException("Corrupted event task: " + line);
             }
-            String[] duration = parts[3].split("-");
+            String[] duration = parts[3].split(" - ");
             if  (duration.length != 2) {
                 throw new FoyBotException("Corrupted event task (event duration invalid): " + line);
             }
@@ -114,7 +114,7 @@ public class Storage {
         return task;
     }
 
-    private String parseTaskToLine(Task task) throws FoyBotException {
+    private String taskToLine(Task task) throws FoyBotException {
         String doneFlag = task.isDone() ? "1" : "0";
 
         if (task instanceof TodoTask) {

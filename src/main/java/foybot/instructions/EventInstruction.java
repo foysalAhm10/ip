@@ -1,5 +1,6 @@
 package foybot.instructions;
 
+import foybot.exception.FoyBotException;
 import foybot.io.FoyBotOutput;
 
 import foybot.tasks.EventTask;
@@ -9,14 +10,28 @@ import foybot.tools.TaskList;
 public class EventInstruction extends Instruction {
     protected EventTask eventTask;
 
-    public EventInstruction(String cleanInput) {
+    public EventInstruction(String cleanInput) throws FoyBotException {
         // format of instruction: project meeting /from Mon 2pm /to 4pm
         String[] taskArr1 = cleanInput.split("/from");
-        String[] taskArr2 = taskArr1[1].trim().split("/to");
+        if (taskArr1.length != 2) {
+            throw new FoyBotException("Invalid deadline task format! " +
+                    "Use: event <description> /from <start> /to <end>");
+        }
+
         String description = taskArr1[0].trim();
-        String fromTime = taskArr2[0].trim();
-        String toTime = taskArr2[1].trim();
-        this.eventTask = new EventTask(description, fromTime, toTime);
+        if (description.isEmpty()) {
+            throw new FoyBotException("Event description cannot be empty.");
+        }
+
+        String[] taskArr2 = taskArr1[1].trim().split("/to");
+        if (taskArr2.length != 2) {
+            throw new FoyBotException("Invalid deadline task format! " +
+                    "Use: event <description> /from <start> /to <end>");
+        }
+
+        String fromRaw = taskArr2[0].trim();
+        String toRaw = taskArr2[1].trim();
+        this.eventTask = new EventTask(description, fromRaw, toRaw);
     }
 
     @Override
