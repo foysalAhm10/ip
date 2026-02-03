@@ -98,7 +98,7 @@ public class Storage {
                 throw new FoyBotException("Corrupted event task: " + line);
             }
             String[] duration = parts[3].split(" - ");
-            if  (duration.length != 2) {
+            if (duration.length != 2) {
                 throw new FoyBotException("Corrupted event task (event duration invalid): " + line);
             }
             task = new EventTask(rest, duration[0], duration[1]);
