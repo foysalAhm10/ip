@@ -6,13 +6,25 @@ import foybot.io.Ui;
 
 import foybot.tools.TaskList;
 
+/**
+ * Represents an instruction that marks a task as not completed.
+ */
 public class UnmarkInstruction extends Instruction {
     protected Integer index;
 
+    /**
+     * Creates an unmark instruction for the task at the given index.
+     *
+     * @param cleanInput Index of the task to be unmarked.
+     */
     public UnmarkInstruction(String cleanInput) {
         this.index = Integer.parseInt(cleanInput) - 1;
     }
 
+    /**
+     * {@inheritDoc} <p>
+     * Marks the specified task as not completed and displays a confirmation.
+     */
     @Override
     public void execute(TaskList tasks, Ui ui) throws FoyBotException {
         if (tasks.size() == 0) {
@@ -29,6 +41,9 @@ public class UnmarkInstruction extends Instruction {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isMutating() {
         return true;

@@ -6,13 +6,25 @@ import foybot.io.Ui;
 
 import foybot.tools.TaskList;
 
+/**
+ * Represents an instruction that marks a task as completed.
+ */
 public class MarkInstruction extends Instruction {
     protected Integer index;
 
+    /**
+     * Creates a mark instruction for the task at the given index.
+     *
+     * @param cleanInput Index of the task to be marked.
+     */
     public MarkInstruction(String cleanInput) {
         this.index = Integer.parseInt(cleanInput) - 1;
     }
 
+    /**
+     * {@inheritDoc} <p>
+     * Marks the specified task as completed and displays a confirmation.
+     */
     @Override
     public void execute(TaskList tasks, Ui ui) throws FoyBotException {
         if (tasks.size() == 0) {
@@ -28,6 +40,9 @@ public class MarkInstruction extends Instruction {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isMutating() {
         return true;

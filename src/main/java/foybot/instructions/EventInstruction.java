@@ -7,9 +7,19 @@ import foybot.tasks.EventTask;
 
 import foybot.tools.TaskList;
 
+/**
+ * Represents an instruction that adds an event task to the task list.
+ */
 public class EventInstruction extends Instruction {
     protected EventTask eventTask;
 
+    /**
+     * Creates an event instruction and prepares the corresponding event task
+     * from the given input.
+     *
+     * @param cleanInput User input containing the task description and time period.
+     * @throws FoyBotException If the input format is invalid.
+     */
     public EventInstruction(String cleanInput) throws FoyBotException {
         // format of instruction: project meeting /from Mon 2pm /to 4pm
         String[] taskArr1 = cleanInput.split("/from");
@@ -34,6 +44,10 @@ public class EventInstruction extends Instruction {
         this.eventTask = new EventTask(description, fromRaw, toRaw);
     }
 
+    /**
+     * {@inheritDoc} <p>
+     * Adds the prepared event task to the task list and displays a confirmation.
+     */
     @Override
     public void execute(TaskList tasks, Ui ui) {
         tasks.addTask(this.eventTask);
@@ -44,6 +58,9 @@ public class EventInstruction extends Instruction {
         ui.showLine();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isMutating() {
         return true;

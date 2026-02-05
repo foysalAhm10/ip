@@ -12,8 +12,17 @@ import foybot.instructions.MarkInstruction;
 import foybot.instructions.TodoInstruction;
 import foybot.instructions.UnmarkInstruction;
 
+/**
+ * Parses user input and converts it into the corresponding Instruction.
+ */
 public class FoyBotParser {
 
+    /**
+     * Parses the given user input and returns the corresponding Instruction.
+     *
+     * @param input User input.
+     * @throws FoyBotException If the input does not represent a valid instruction.
+     */
     public Instruction parse(String input) throws FoyBotException {
         input = input.trim();
 
