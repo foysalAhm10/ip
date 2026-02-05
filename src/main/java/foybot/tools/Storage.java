@@ -1,12 +1,5 @@
 package foybot.tools;
 
-import foybot.exception.FoyBotException;
-
-import foybot.tasks.Task;
-import foybot.tasks.DeadlineTask;
-import foybot.tasks.EventTask;
-import foybot.tasks.TodoTask;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,13 +7,35 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import foybot.exception.FoyBotException;
+import foybot.tasks.DeadlineTask;
+import foybot.tasks.EventTask;
+import foybot.tasks.Task;
+import foybot.tasks.TodoTask;
+
+/**
+ * Provides persistent storage for Task objects.
+ * Tasks can be loaded from and saved to a data file through this class.
+ */
 public class Storage {
     private final Path filePath;
 
+    /**
+     * Creates a Storage object for a task data file at the given location.
+     *
+     * @param folder   The folder containing the data file.
+     * @param fileName The name of the data file.
+     */
     public Storage(String folder, String fileName) {
         this.filePath = Paths.get(folder, fileName);
     }
 
+    /**
+     * Loads all stored tasks from the data file.
+     *
+     * @return A list of tasks previously saved, or an empty list if no data exists.
+     * @throws FoyBotException If the tasks cannot be loaded.
+     */
     public ArrayList<Task> load() throws FoyBotException {
         try {
             ensureFolderExists();
@@ -47,6 +62,12 @@ public class Storage {
         }
     }
 
+    /**
+     * Saves the given tasks to the data file, replacing any existing data.
+     *
+     * @param tasks The tasks to be saved.
+     * @throws FoyBotException If the tasks cannot be saved.
+     */
     public void save(ArrayList<Task> tasks) throws FoyBotException {
         try {
             ensureFolderExists();
@@ -70,6 +91,13 @@ public class Storage {
         }
     }
 
+    /**
+     * Converts a line from the data file into the corresponding Task.
+     *
+     * @param line A line representing a task.
+     * @return The Task represented by the line.
+     * @throws FoyBotException If the line does not represent a valid task.
+     */
     private Task parseLineToTask(String line) throws FoyBotException {
         String[] parts = line.split(" \\| ");
 
@@ -98,7 +126,7 @@ public class Storage {
                 throw new FoyBotException("Corrupted event task: " + line);
             }
             String[] duration = parts[3].split(" - ");
-            if  (duration.length != 2) {
+            if (duration.length != 2) {
                 throw new FoyBotException("Corrupted event task (event duration invalid): " + line);
             }
             task = new EventTask(rest, duration[0], duration[1]);
@@ -114,6 +142,13 @@ public class Storage {
         return task;
     }
 
+    /**
+     * Converts a Task into a form suitable for storage in the data file.
+     *
+     * @param task The task to be converted.
+     * @return A string representation of the task.
+     * @throws FoyBotException If the task cannot be represented.
+     */
     private String taskToLine(Task task) throws FoyBotException {
         String doneFlag = task.isDone() ? "1" : "0";
 

@@ -1,9 +1,7 @@
 package foybot.instructions;
 
 import foybot.io.Ui;
-
 import foybot.tasks.TodoTask;
-
 import foybot.tools.TaskList;
 
 public class TodoInstruction extends Instruction {

@@ -1,7 +1,6 @@
 package foybot.instructions;
 
 import foybot.io.Ui;
-
 import foybot.tools.TaskList;
 
 public class ByeInstruction extends Instruction {

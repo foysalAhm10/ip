@@ -1,9 +1,7 @@
 package foybot.instructions;
 
 import foybot.exception.FoyBotException;
-
 import foybot.io.Ui;
-
 import foybot.tools.TaskList;
 
 public class UnmarkInstruction extends Instruction {

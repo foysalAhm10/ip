@@ -1,14 +1,11 @@
+import java.util.Scanner;
+
 import foybot.exception.FoyBotException;
-
 import foybot.instructions.Instruction;
-
-import foybot.io.Ui;
 import foybot.io.FoyBotParser;
-
+import foybot.io.Ui;
 import foybot.tools.Storage;
 import foybot.tools.TaskList;
-
-import java.util.Scanner;
 
 public class FoyBot {
     public static void main(String[] args) {
