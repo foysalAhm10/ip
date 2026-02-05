@@ -2,9 +2,7 @@ package foybot.instructions;
 
 import foybot.exception.FoyBotException;
 import foybot.io.Ui;
-
 import foybot.tasks.EventTask;
-
 import foybot.tools.TaskList;
 
 /**

@@ -1,9 +1,7 @@
 package foybot.instructions;
 
 import foybot.exception.FoyBotException;
-
 import foybot.io.Ui;
-
 import foybot.tools.TaskList;
 
 /**
@@ -15,7 +13,7 @@ public abstract class Instruction {
      * Executes the instruction using the given task list and user interface.
      *
      * @param tasks The task list to operate on.
-     * @param ui The user interface for displaying output.
+     * @param ui    The user interface for displaying output.
      * @throws FoyBotException If the instruction cannot be executed.
      */
     public abstract void execute(TaskList tasks, Ui ui) throws FoyBotException;

@@ -1,22 +1,21 @@
 package foybot.io;
 
-import foybot.exception.FoyBotException;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import foybot.instructions.Instruction;
+import org.junit.jupiter.api.Test;
+
+import foybot.exception.FoyBotException;
 import foybot.instructions.ByeInstruction;
 import foybot.instructions.DeadlineInstruction;
 import foybot.instructions.DeleteInstruction;
 import foybot.instructions.EventInstruction;
+import foybot.instructions.Instruction;
 import foybot.instructions.ListInstruction;
 import foybot.instructions.MarkInstruction;
 import foybot.instructions.TodoInstruction;
 import foybot.instructions.UnmarkInstruction;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
 public class FoyBotParserTest {
 

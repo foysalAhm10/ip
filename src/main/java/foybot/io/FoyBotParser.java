@@ -1,12 +1,12 @@
 package foybot.io;
 
 import foybot.exception.FoyBotException;
-
-import foybot.instructions.Instruction;
 import foybot.instructions.ByeInstruction;
 import foybot.instructions.DeadlineInstruction;
 import foybot.instructions.DeleteInstruction;
 import foybot.instructions.EventInstruction;
+import foybot.instructions.FindInstruction;
+import foybot.instructions.Instruction;
 import foybot.instructions.ListInstruction;
 import foybot.instructions.MarkInstruction;
 import foybot.instructions.TodoInstruction;
@@ -79,6 +79,12 @@ public class FoyBotParser {
                 throw new FoyBotException("im confused! State which task to delete.");
             }
             return new DeleteInstruction(rest);
+
+        case "find":
+            if (rest.isEmpty()) {
+                throw new FoyBotException("im confused! State a keyword that identify the tasks.");
+            }
+            return new FindInstruction(rest);
 
         default:
             throw new FoyBotException("OOPS!!! I don't understand this instruction yet :-(");

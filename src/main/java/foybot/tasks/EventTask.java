@@ -1,10 +1,10 @@
 package foybot.tasks;
 
-import foybot.exception.FoyBotException;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+
+import foybot.exception.FoyBotException;
 
 /**
  * Represents a task that occurs over a period of time.
@@ -17,8 +17,8 @@ public class EventTask extends Task {
      * Creates an event task with the given description and time period.
      *
      * @param description Description of the task.
-     * @param fromRaw Start date of the event in yyyy-mm-dd format.
-     * @param toRaw End date of the event in yyyy-mm-dd format.
+     * @param fromRaw     Start date of the event in yyyy-mm-dd format.
+     * @param toRaw       End date of the event in yyyy-mm-dd format.
      * @throws FoyBotException If the date format is invalid or the time period is invalid.
      */
     public EventTask(String description, String fromRaw, String toRaw) throws FoyBotException {

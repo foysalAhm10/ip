@@ -1,8 +1,9 @@
 package foybot.tools;
 
-import foybot.tasks.Task;
-
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+import foybot.tasks.Task;
 
 public class TaskList {
     private final ArrayList<Task> tasks;
@@ -34,4 +35,11 @@ public class TaskList {
     public ArrayList<Task> getTasks() {
         return tasks;
     }
+
+    public ArrayList<Task> findTasks(String keyword) {
+        return tasks.stream()
+                .filter(t -> t.toString().toLowerCase().contains(keyword.toLowerCase()))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
 }

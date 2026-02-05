@@ -1,10 +1,10 @@
 package foybot.tasks;
 
-import foybot.exception.FoyBotException;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+
+import foybot.exception.FoyBotException;
 
 /**
  * Represents a task that must be completed by a specific deadline.

@@ -1,18 +1,17 @@
 package foybot.tools;
 
-import foybot.exception.FoyBotException;
-
-import foybot.tasks.Task;
-import foybot.tasks.DeadlineTask;
-import foybot.tasks.EventTask;
-import foybot.tasks.TodoTask;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import foybot.exception.FoyBotException;
+import foybot.tasks.DeadlineTask;
+import foybot.tasks.EventTask;
+import foybot.tasks.Task;
+import foybot.tasks.TodoTask;
 
 /**
  * Provides persistent storage for Task objects.
@@ -24,7 +23,7 @@ public class Storage {
     /**
      * Creates a Storage object for a task data file at the given location.
      *
-     * @param folder The folder containing the data file.
+     * @param folder   The folder containing the data file.
      * @param fileName The name of the data file.
      */
     public Storage(String folder, String fileName) {
