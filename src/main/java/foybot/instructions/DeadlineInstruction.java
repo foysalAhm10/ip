@@ -7,9 +7,19 @@ import foybot.tasks.DeadlineTask;
 
 import foybot.tools.TaskList;
 
+/**
+ * Represents an instruction that adds a valid deadline task to the task list.
+ */
 public class DeadlineInstruction extends Instruction {
     protected DeadlineTask deadlineTask;
 
+    /**
+     * Creates a deadline instruction and prepares the corresponding deadline task
+     * from the given input.
+     *
+     * @param cleanInput User input containing the task description and deadline.
+     * @throws FoyBotException If the input format is invalid.
+     */
     public DeadlineInstruction(String cleanInput) throws FoyBotException {
         // format of instruction: create website /by 2026-03-01
         String[] parts = cleanInput.split("/by");
@@ -29,6 +39,10 @@ public class DeadlineInstruction extends Instruction {
         this.deadlineTask = new DeadlineTask(description, deadlineRaw);
     }
 
+    /**
+     * {@inheritDoc} <p>
+     * Adds the prepared deadline task to the task list and displays a confirmation.
+     */
     @Override
     public void execute(TaskList tasks, Ui ui) {
         tasks.addTask(this.deadlineTask);
@@ -39,9 +53,11 @@ public class DeadlineInstruction extends Instruction {
         ui.showLine();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isMutating() {
         return true;
     }
-
 }
