@@ -7,6 +7,11 @@ import foybot.io.Ui;
 import foybot.tools.Storage;
 import foybot.tools.TaskList;
 
+/**
+ * Entry point of the FoyBot application.
+ * <p>
+ * Coordinates user interaction, instruction execution, and task persistence.
+ */
 public class FoyBot {
     public static void main(String[] args) {
         Ui ui = new Ui();

@@ -5,6 +5,9 @@ import java.util.stream.Collectors;
 
 import foybot.tasks.Task;
 
+/**
+ * Represents a collection of tasks and provides operations on them.
+ */
 public class TaskList {
     private final ArrayList<Task> tasks;
 
@@ -36,6 +39,11 @@ public class TaskList {
         return tasks;
     }
 
+    /**
+     * Returns tasks whose descriptions contain the given keyword.
+     *
+     * @param keyword Keyword used to search for tasks.
+     */
     public ArrayList<Task> findTasks(String keyword) {
         return tasks.stream()
                 .filter(t -> t.toString().toLowerCase().contains(keyword.toLowerCase()))

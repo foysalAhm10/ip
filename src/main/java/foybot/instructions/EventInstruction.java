@@ -22,8 +22,8 @@ public class EventInstruction extends Instruction {
         // format of instruction: project meeting /from Mon 2pm /to 4pm
         String[] taskArr1 = cleanInput.split("/from");
         if (taskArr1.length != 2) {
-            throw new FoyBotException("Invalid deadline task format! " +
-                    "Use: event <description> /from <start> /to <end>");
+            throw new FoyBotException("Invalid deadline task format! "
+                    + "Use: event <description> /from <start> /to <end>");
         }
 
         String description = taskArr1[0].trim();
@@ -33,8 +33,8 @@ public class EventInstruction extends Instruction {
 
         String[] taskArr2 = taskArr1[1].trim().split("/to");
         if (taskArr2.length != 2) {
-            throw new FoyBotException("Invalid deadline task format! " +
-                    "Use: event <description> /from <start> /to <end>");
+            throw new FoyBotException("Invalid deadline task format! "
+                    + "Use: event <description> /from <start> /to <end>");
         }
 
         String fromRaw = taskArr2[0].trim();

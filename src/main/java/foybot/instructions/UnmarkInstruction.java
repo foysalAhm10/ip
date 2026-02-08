@@ -46,5 +46,4 @@ public class UnmarkInstruction extends Instruction {
     public boolean isMutating() {
         return true;
     }
-
 }

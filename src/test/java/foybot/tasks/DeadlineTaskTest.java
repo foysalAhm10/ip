@@ -22,8 +22,7 @@ public class DeadlineTaskTest {
     @Test
     public void constructor_invalidDate_throwsException() {
         FoyBotException ex = assertThrows(
-                FoyBotException.class,
-                () -> new DeadlineTask("submit report", "10-02-2026")
+                FoyBotException.class, () -> new DeadlineTask("submit report", "10-02-2026")
         );
 
         assertEquals(

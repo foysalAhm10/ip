@@ -41,5 +41,4 @@ public class TodoInstruction extends Instruction {
     public boolean isMutating() {
         return true;
     }
-
 }

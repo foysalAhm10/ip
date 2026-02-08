@@ -23,8 +23,8 @@ public class DeadlineInstruction extends Instruction {
         String[] parts = cleanInput.split("/by");
 
         if (parts.length != 2) {
-            throw new FoyBotException("Invalid deadline task format! " +
-                    "Use: deadline <description> /by <date>");
+            throw new FoyBotException("Invalid deadline task format! "
+                    + "Use: deadline <description> /by <date>");
         }
 
         String description = parts[0].trim();
