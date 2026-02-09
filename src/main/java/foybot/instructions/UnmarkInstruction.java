@@ -32,8 +32,8 @@ public class UnmarkInstruction extends Instruction {
         } else {
             tasks.get(index).markUndone();
             ui.showLine();
-            System.out.println("    OK, I've marked this task as not done yet:");
-            System.out.println("        " + tasks.get(index));
+            ui.showMessage("OK, I've marked this task as not done yet:");
+            ui.showMessage("    " + tasks.get(index));
             ui.showLine();
         }
 

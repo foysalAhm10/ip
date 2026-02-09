@@ -15,9 +15,9 @@ public class ListInstruction extends Instruction {
     public void execute(TaskList tasks, Ui ui) {
         ui.showLine();
         if (tasks.size() < 1) {
-            ui.showMessage("    No tasks in the list currently.");
+            ui.showMessage("No tasks in the list currently.");
         } else {
-            System.out.println("    Here are the tasks in your list:");
+            ui.showMessage("Here are the tasks in your list:");
             ui.showList(tasks);
         }
         ui.showLine();
