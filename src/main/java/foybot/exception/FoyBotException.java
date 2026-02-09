@@ -1,7 +1,7 @@
 package foybot.exception;
 
 /**
- * Represents an exception that occurs during the execution of FoyBot operations.
+ * Represents an exception that occurs during the execution of foybot.FoyBot operations.
  */
 public class FoyBotException extends Exception {
     /**

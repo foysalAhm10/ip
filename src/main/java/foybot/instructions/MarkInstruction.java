@@ -32,8 +32,8 @@ public class MarkInstruction extends Instruction {
         } else {
             tasks.get(index).markDone();
             ui.showLine();
-            System.out.println("    Nice! I've marked this task as done:");
-            System.out.println("        " + tasks.get(index));
+            ui.showMessage("Nice! I've marked this task as done:");
+            ui.showMessage("    " + tasks.get(index));
             ui.showLine();
         }
     }

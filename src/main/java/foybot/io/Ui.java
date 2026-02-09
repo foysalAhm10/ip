@@ -3,16 +3,21 @@ package foybot.io;
 import foybot.tools.TaskList;
 
 /**
- * Handles all user interface output for FoyBot.
+ * Handles all user interface output for foybot.FoyBot.
  */
 public class Ui {
     private static final String LINE = "    ____________________________________________________________";
+    private final StringBuilder output = new StringBuilder();
+
+    private void appendLine(String line) {
+        output.append(line).append(System.lineSeparator());
+    }
 
     /**
      * Displays a separator line.
      */
     public void showLine() {
-        System.out.println(LINE);
+        appendLine(LINE);
     }
 
     /**
@@ -20,8 +25,8 @@ public class Ui {
      */
     public void showWelcome() {
         showLine();
-        System.out.println("    Hello! I'm FoyBot!");
-        System.out.println("    What can I do for you?");
+        appendLine("    Hello! I'm FoyBot!");
+        appendLine("    What can I do for you?");
         showLine();
     }
 
@@ -29,7 +34,7 @@ public class Ui {
      * Displays the farewell message to the user.
      */
     public void showBye() {
-        System.out.println("    Bye. Hope to see you again soon!");
+        appendLine("    Bye. Hope to see you again soon!");
         showLine();
     }
 
@@ -40,7 +45,7 @@ public class Ui {
      */
     public void showList(TaskList tasks) {
         for (int i = 0; i < tasks.size(); i++) {
-            System.out.println("    " + (i + 1) + ". " + tasks.get(i));
+            appendLine("    " + (i + 1) + ". " + tasks.get(i));
         }
     }
 
@@ -51,7 +56,7 @@ public class Ui {
      */
     public void showError(String message) {
         showLine();
-        System.out.println("     " + message);
+        appendLine("     " + message);
         showLine();
     }
 
@@ -61,7 +66,18 @@ public class Ui {
      * @param message The message to display.
      */
     public void showMessage(String message) {
-        System.out.println("    " + message);
+        appendLine("    " + message);
+    }
+
+    /**
+     * Returns accumulated output and clears the buffer.
+     *
+     * @return Output text ready for display.
+     */
+    public String consumeOutput() {
+        String content = output.toString();
+        output.setLength(0);
+        return content.stripTrailing();
     }
 }
 
