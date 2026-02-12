@@ -34,6 +34,7 @@ public class EventTask extends Task {
         if (fromTime.isAfter(toTime)) {
             throw new FoyBotException("Event start date must be before or equal to end date.");
         }
+        assert !fromTime.isAfter(toTime) : "Event start date should not be after end date";
     }
 
     public String getFromTo() {
