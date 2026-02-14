@@ -37,7 +37,7 @@ public class DeleteInstruction extends Instruction {
             assert tasks.size() == oldSize - 1 : "Task list size should decrease by 1 after delete";
             ui.showLine();
             ui.showMessage("Noted. I've removed this task:");
-            ui.showMessage("    " + deletedTask.toString());
+            ui.showMessage(Ui.INDENT + deletedTask.toString());
             ui.showMessage("Now you have " + tasks.size() + " tasks in the list.");
             ui.showLine();
         }
