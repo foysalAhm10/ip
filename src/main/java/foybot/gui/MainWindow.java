@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+
 /**
  * Controller for the main GUI.
  */
@@ -31,7 +32,9 @@ public class MainWindow extends AnchorPane {
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
     }
 
-    /** Injects the foybot.FoyBot instance */
+    /**
+     * Injects the foybot.FoyBot instance
+     */
     public void setFoyBot(FoyBot fb) {
         foyBot = fb;
         String welcome = foyBot.getWelcomeMessage();

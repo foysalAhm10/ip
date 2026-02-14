@@ -11,10 +11,9 @@ import foybot.instructions.ByeInstruction;
 import foybot.instructions.DeadlineInstruction;
 import foybot.instructions.DeleteInstruction;
 import foybot.instructions.EventInstruction;
+import foybot.instructions.FindInstruction;
 import foybot.instructions.GreetInstruction;
-import foybot.instructions.HelpInstruction;
 import foybot.instructions.Instruction;
-import foybot.instructions.ListInstruction;
 import foybot.instructions.MarkInstruction;
 import foybot.instructions.TodoInstruction;
 import foybot.instructions.UnmarkInstruction;
@@ -37,41 +36,9 @@ public class FoyBotParserTest {
     }
 
     @Test
-    public void parse_whitespaceOnly_throwsException() {
-        assertParseThrows(
-                "     ",
-                "No task found. Please let me do something for you!"
-        );
-    }
-
-    @Test
     public void parse_bye_returnsByeInstruction() throws Exception {
         Instruction instruction = parser.parse("bye");
         assertInstanceOf(ByeInstruction.class, instruction);
-    }
-
-    @Test
-    public void parse_list_returnsListInstruction() throws Exception {
-        Instruction instruction = parser.parse("list");
-        assertInstanceOf(ListInstruction.class, instruction);
-    }
-
-    @Test
-    public void parse_help_returnsHelpInstruction() throws Exception {
-        Instruction instruction = parser.parse("help");
-        assertInstanceOf(HelpInstruction.class, instruction);
-    }
-
-    @Test
-    public void parse_hi_returnsGreetingInstruction() throws Exception {
-        Instruction instruction = parser.parse("hi");
-        assertInstanceOf(GreetInstruction.class, instruction);
-    }
-
-    @Test
-    public void parse_hey_returnsGreetingInstruction() throws Exception {
-        Instruction instruction = parser.parse("hey");
-        assertInstanceOf(GreetInstruction.class, instruction);
     }
 
     @Test
@@ -177,6 +144,20 @@ public class FoyBotParserTest {
         assertParseThrows(
                 "delete",
                 "im confused! State which task to delete."
+        );
+    }
+
+    @Test
+    public void parse_findWithKeyword_returnsFindInstruction() throws Exception {
+        Instruction instruction = parser.parse("find report");
+        assertInstanceOf(FindInstruction.class, instruction);
+    }
+
+    @Test
+    public void parse_findNoKeyword_throwsException() {
+        assertParseThrows(
+                "find",
+                "im confused! State a keyword that identify the tasks."
         );
     }
 

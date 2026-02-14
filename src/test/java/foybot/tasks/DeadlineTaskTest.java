@@ -38,4 +38,15 @@ public class DeadlineTaskTest {
         String expected = "[D][ ] exam (by: Dec 01 2025)";
         assertEquals(expected, task.toString());
     }
+
+    @Test
+    public void markDoneAndUndone_updatesStatusInToString() throws Exception {
+        DeadlineTask task = new DeadlineTask("submit report", "2026-02-10");
+
+        task.markDone();
+        assertTrue(task.toString().startsWith("[D][X]"));
+
+        task.markUndone();
+        assertTrue(task.toString().startsWith("[D][ ]"));
+    }
 }

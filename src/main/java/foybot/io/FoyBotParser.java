@@ -121,6 +121,6 @@ public class FoyBotParser {
         String[] parts = input.split(" ", 2);
         String keyword = parts[0];
         String rest = (parts.length < 2) ? "" : parts[1].trim();
-        return new String[] {keyword, rest};
+        return new String[]{keyword, rest};
     }
 }
