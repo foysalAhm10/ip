@@ -49,6 +49,7 @@ public class TaskList {
      */
     public ArrayList<Task> findTasks(String keyword) {
         assert keyword != null : "Find keyword should not be null";
+        // filter tasks that match the keyword (case-insensitive), then collect into a new list.
         return tasks.stream()
                 .filter(t -> t.toString().toLowerCase().contains(keyword.toLowerCase()))
                 .collect(Collectors.toCollection(ArrayList::new));
