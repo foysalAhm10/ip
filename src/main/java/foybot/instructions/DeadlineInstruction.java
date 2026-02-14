@@ -46,7 +46,7 @@ public class DeadlineInstruction extends Instruction {
         tasks.addTask(this.deadlineTask);
         ui.showLine();
         ui.showMessage("Got it. I've added this task:");
-        ui.showMessage("    " + this.deadlineTask.toString());
+        ui.showMessage(Ui.INDENT + this.deadlineTask.toString());
         ui.showMessage("Now you have " + tasks.size() + " tasks in the list.");
         ui.showLine();
     }
