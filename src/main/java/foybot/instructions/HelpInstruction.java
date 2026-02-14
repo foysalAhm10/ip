@@ -13,7 +13,6 @@ public class HelpInstruction extends Instruction {
      */
     @Override
     public void execute(TaskList tasks, Ui ui) {
-        ui.showLine();
         ui.showMessage("You asked for help? That's my favorite activity!");
         ui.showMessage("FoyBot helps you track tasks and deadlines.\n");
 
@@ -50,6 +49,5 @@ public class HelpInstruction extends Instruction {
         ui.showMessage(Ui.INDENT + "- exit FoyBot\n");
 
         ui.showMessage("Use one of the instructions now!");
-        ui.showLine();
     }
 }

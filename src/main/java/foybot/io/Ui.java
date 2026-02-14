@@ -7,7 +7,6 @@ import foybot.tools.TaskList;
  */
 public class Ui {
     public static final String INDENT = "        ";
-    private static final String LINE = INDENT + "___________________________________________________";
     private final StringBuilder output = new StringBuilder();
 
     private void appendLine(String line) {
@@ -15,28 +14,18 @@ public class Ui {
     }
 
     /**
-     * Displays a separator line.
-     */
-    public void showLine() {
-        appendLine(LINE);
-    }
-
-    /**
      * Displays the welcome message to the user.
      */
     public void showWelcome() {
-        showLine();
-        appendLine(INDENT + "Hello! I'm FoyBot!");
-        appendLine(INDENT + "What can I do for you?");
-        showLine();
+        appendLine("Hello! I'm FoyBot!");
+        appendLine("What can I do for you?");
     }
 
     /**
      * Displays the farewell message to the user.
      */
     public void showBye() {
-        appendLine(INDENT + "Bye. Hope to see you again soon!");
-        showLine();
+        appendLine("Bye. Hope to see you again soon!");
     }
 
     /**
@@ -56,9 +45,7 @@ public class Ui {
      * @param message The error message to display.
      */
     public void showError(String message) {
-        showLine();
-        appendLine(INDENT + message);
-        showLine();
+        appendLine(message);
     }
 
     /**
@@ -67,7 +54,7 @@ public class Ui {
      * @param message The message to display.
      */
     public void showMessage(String message) {
-        appendLine(INDENT + message);
+        appendLine(message);
     }
 
     /**

@@ -13,9 +13,7 @@ public class GreetInstruction extends Instruction {
      */
     @Override
     public void execute(TaskList tasks, Ui ui) {
-        ui.showLine();
         ui.showMessage("Hey there, legend. FoyBot reporting for duty.");
         ui.showMessage("How may I help you today?");
-        ui.showLine();
     }
 }

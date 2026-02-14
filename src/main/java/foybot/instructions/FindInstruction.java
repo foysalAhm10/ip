@@ -40,6 +40,5 @@ public class FindInstruction extends Instruction {
 
         ui.showMessage("Here are the matching tasks in your list:");
         ui.showList(new TaskList(matches));
-        ui.showLine();
     }
 }

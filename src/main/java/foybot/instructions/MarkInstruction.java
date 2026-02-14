@@ -31,10 +31,8 @@ public class MarkInstruction extends Instruction {
             throw new FoyBotException("Index out of bounds.");
         } else {
             tasks.get(index).markDone();
-            ui.showLine();
             ui.showMessage("Nice! I've marked this task as done:");
             ui.showMessage(Ui.INDENT + tasks.get(index));
-            ui.showLine();
         }
     }
 

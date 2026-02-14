@@ -49,11 +49,9 @@ public class EventInstruction extends Instruction {
     @Override
     public void execute(TaskList tasks, Ui ui) {
         tasks.addTask(this.eventTask);
-        ui.showLine();
         ui.showMessage("Got it. I've added this task:");
         ui.showMessage(Ui.INDENT + this.eventTask.toString());
         ui.showMessage("Now you have " + tasks.size() + " tasks in the list.");
-        ui.showLine();
     }
 
     /**

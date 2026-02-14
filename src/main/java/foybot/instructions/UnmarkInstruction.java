@@ -31,10 +31,8 @@ public class UnmarkInstruction extends Instruction {
             throw new FoyBotException("Index out of bounds.");
         } else {
             tasks.get(index).markUndone();
-            ui.showLine();
             ui.showMessage("OK, I've marked this task as not done yet:");
             ui.showMessage(Ui.INDENT + tasks.get(index));
-            ui.showLine();
         }
 
     }

@@ -27,11 +27,9 @@ public class TodoInstruction extends Instruction {
     @Override
     public void execute(TaskList tasks, Ui ui) {
         tasks.addTask(todoTask);
-        ui.showLine();
         ui.showMessage("Got it. I've added this task:");
         ui.showMessage(Ui.INDENT + todoTask.toString());
         ui.showMessage("Now you have " + tasks.size() + " tasks in the list.");
-        ui.showLine();
     }
 
     /**
