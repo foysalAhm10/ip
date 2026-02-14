@@ -6,7 +6,7 @@ import foybot.tools.TaskList;
  * Handles all user interface output for foybot.FoyBot.
  */
 public class Ui {
-    public static final String INDENT = "    ";
+    public static final String INDENT = "        ";
     private static final String LINE = INDENT + "___________________________________________________";
     private final StringBuilder output = new StringBuilder();
 

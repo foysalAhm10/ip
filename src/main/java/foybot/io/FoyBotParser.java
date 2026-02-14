@@ -6,6 +6,8 @@ import foybot.instructions.DeadlineInstruction;
 import foybot.instructions.DeleteInstruction;
 import foybot.instructions.EventInstruction;
 import foybot.instructions.FindInstruction;
+import foybot.instructions.GreetInstruction;
+import foybot.instructions.HelpInstruction;
 import foybot.instructions.Instruction;
 import foybot.instructions.ListInstruction;
 import foybot.instructions.MarkInstruction;
@@ -30,9 +32,13 @@ public class FoyBotParser {
             throw new FoyBotException("No task found. Please let me do something for you!");
         }
 
-        String[] parts = input.split(" ", 2);
-        String keyword = parts[0];
-        String rest = (parts.length < 2) ? "" : parts[1].trim();
+        String[] processedInput = processedInput(input);
+        String keyword = processedInput[0];
+        String rest = processedInput[1];
+
+        if (isGreeting(keyword)) {
+            return new GreetInstruction();
+        }
 
         switch (keyword) {
         case "bye":
@@ -86,9 +92,35 @@ public class FoyBotParser {
             }
             return new FindInstruction(rest);
 
+        case "help":
+            if (!rest.isEmpty()) {
+                throw new FoyBotException("im confused! To get help, just type: help.");
+            }
+            return new HelpInstruction();
+
         default:
             throw new FoyBotException("OOPS!!! I don't understand this instruction yet :-(");
         }
     }
-}
 
+    private boolean isGreeting(String keyword) {
+        switch (keyword.toLowerCase()) {
+        case "hi":
+        case "hello":
+        case "hey":
+        case "hiya":
+        case "yo":
+        case "sup":
+            return true;
+        default:
+            return false;
+        }
+    }
+
+    private String[] processedInput(String input) {
+        String[] parts = input.split(" ", 2);
+        String keyword = parts[0];
+        String rest = (parts.length < 2) ? "" : parts[1].trim();
+        return new String[] {keyword, rest};
+    }
+}
