@@ -107,6 +107,7 @@ public class Storage {
 
         String type = parts[0];
         boolean isDone = parts[1].equals("1");
+        assert parts[1].equals("0") || parts[1].equals("1") : "Done flag should be 0 or 1";
         String rest = parts[2];
 
         Task task;
@@ -150,6 +151,7 @@ public class Storage {
      * @throws FoyBotException If the task cannot be represented.
      */
     private String taskToLine(Task task) throws FoyBotException {
+        assert task.getDescription() != null : "Task description should be non-null when saving";
         String doneFlag = task.isDone() ? "1" : "0";
 
         if (task instanceof TodoTask) {
