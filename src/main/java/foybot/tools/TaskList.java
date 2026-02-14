@@ -11,16 +11,29 @@ import foybot.tasks.Task;
 public class TaskList {
     private final ArrayList<Task> tasks;
 
+    /**
+     * Creates an empty TaskList.
+     */
     public TaskList() {
         this.tasks = new ArrayList<>();
     }
 
+    /**
+     * Creates a TaskList with the specified backing list.
+     *
+     * @param tasks The initial list of tasks.
+     */
     public TaskList(ArrayList<Task> tasks) {
         // Constructor should never receive a null backing list.
         assert tasks != null : "TaskList backing list should not be null";
         this.tasks = tasks;
     }
 
+    /**
+     * Adds the specified task to this task list.
+     *
+     * @param task The task to be added.
+     */
     public void addTask(Task task) {
         assert task != null : "Task to add should not be null";
         tasks.add(task);

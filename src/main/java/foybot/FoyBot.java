@@ -21,19 +21,6 @@ public class FoyBot {
     private final Storage storage;
     private boolean isExit;
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        FoyBot foyBot = new FoyBot();
-
-        foyBot.getWelcomeMessage();
-        while (!foyBot.isExit()) {
-            String input = scanner.nextLine();
-            foyBot.getResponse(input);
-        }
-
-        scanner.close();
-    }
-
     /**
      * Creates a new {@code FoyBot} instance and initializes its components.
      * <p>
@@ -95,5 +82,18 @@ public class FoyBot {
         }
 
         return ui.consumeOutput();
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        FoyBot foyBot = new FoyBot();
+
+        foyBot.getWelcomeMessage();
+        while (!foyBot.isExit()) {
+            String input = scanner.nextLine();
+            foyBot.getResponse(input);
+        }
+
+        scanner.close();
     }
 }
