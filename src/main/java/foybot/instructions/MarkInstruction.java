@@ -33,7 +33,7 @@ public class MarkInstruction extends Instruction {
             tasks.get(index).markDone();
             ui.showLine();
             ui.showMessage("Nice! I've marked this task as done:");
-            ui.showMessage("    " + tasks.get(index));
+            ui.showMessage(Ui.INDENT + tasks.get(index));
             ui.showLine();
         }
     }

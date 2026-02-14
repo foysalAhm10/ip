@@ -6,7 +6,8 @@ import foybot.tools.TaskList;
  * Handles all user interface output for foybot.FoyBot.
  */
 public class Ui {
-    private static final String LINE = "    ____________________________________________________________";
+    public static final String INDENT = "    ";
+    private static final String LINE = INDENT + "____________________________________________________________";
     private final StringBuilder output = new StringBuilder();
 
     private void appendLine(String line) {
@@ -25,8 +26,8 @@ public class Ui {
      */
     public void showWelcome() {
         showLine();
-        appendLine("    Hello! I'm FoyBot!");
-        appendLine("    What can I do for you?");
+        appendLine(INDENT + "Hello! I'm FoyBot!");
+        appendLine(INDENT + "What can I do for you?");
         showLine();
     }
 
@@ -34,7 +35,7 @@ public class Ui {
      * Displays the farewell message to the user.
      */
     public void showBye() {
-        appendLine("    Bye. Hope to see you again soon!");
+        appendLine(INDENT + "Bye. Hope to see you again soon!");
         showLine();
     }
 
@@ -45,7 +46,7 @@ public class Ui {
      */
     public void showList(TaskList tasks) {
         for (int i = 0; i < tasks.size(); i++) {
-            appendLine("    " + (i + 1) + ". " + tasks.get(i));
+            appendLine(INDENT + (i + 1) + ". " + tasks.get(i));
         }
     }
 
@@ -56,7 +57,7 @@ public class Ui {
      */
     public void showError(String message) {
         showLine();
-        appendLine("     " + message);
+        appendLine(INDENT + message);
         showLine();
     }
 
@@ -66,7 +67,7 @@ public class Ui {
      * @param message The message to display.
      */
     public void showMessage(String message) {
-        appendLine("    " + message);
+        appendLine(INDENT + message);
     }
 
     /**
@@ -80,4 +81,3 @@ public class Ui {
         return content.stripTrailing();
     }
 }
-

@@ -18,10 +18,6 @@ public abstract class Task {
         this.isDone = false;
     }
 
-    public String getStatusIcon() {
-        return (this.isDone ? "[X]" : "[ ]");
-    }
-
     /**
      * Marks the task as completed.
      */
@@ -54,6 +50,7 @@ public abstract class Task {
      */
     @Override
     public String toString() {
-        return getStatusIcon() + " " + this.description;
+        return (this.isDone ? "[X]" : "[ ]")
+                + " " + this.description;
     }
 }
