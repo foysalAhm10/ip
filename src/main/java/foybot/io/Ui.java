@@ -7,7 +7,7 @@ import foybot.tools.TaskList;
  */
 public class Ui {
     public static final String INDENT = "    ";
-    private static final String LINE = INDENT + "____________________________________________________________";
+    private static final String LINE = INDENT + "___________________________________________________";
     private final StringBuilder output = new StringBuilder();
 
     private void appendLine(String line) {

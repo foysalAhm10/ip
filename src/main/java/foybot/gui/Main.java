@@ -23,6 +23,8 @@ public class Main extends Application {
             AnchorPane ap = fxmlLoader.load();
             Scene scene = new Scene(ap);
             stage.setScene(scene);
+            stage.setMinWidth(500.0);
+            stage.setMinHeight(600.0);
             fxmlLoader.<MainWindow>getController().setFoyBot(foyBot); // inject the FoyBot instance
             stage.setTitle("FoyBot");
             stage.show();
