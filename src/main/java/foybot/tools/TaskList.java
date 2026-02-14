@@ -16,10 +16,13 @@ public class TaskList {
     }
 
     public TaskList(ArrayList<Task> tasks) {
+        // Constructor should never receive a null backing list.
+        assert tasks != null : "TaskList backing list should not be null";
         this.tasks = tasks;
     }
 
     public void addTask(Task task) {
+        assert task != null : "Task to add should not be null";
         tasks.add(task);
     }
 
@@ -45,6 +48,7 @@ public class TaskList {
      * @param keyword Keyword used to search for tasks.
      */
     public ArrayList<Task> findTasks(String keyword) {
+        assert keyword != null : "Find keyword should not be null";
         // filter tasks that match the keyword (case-insensitive), then collect into a new list.
         return tasks.stream()
                 .filter(t -> t.toString().toLowerCase().contains(keyword.toLowerCase()))

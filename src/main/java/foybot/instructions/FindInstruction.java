@@ -29,6 +29,9 @@ public class FindInstruction extends Instruction {
     @Override
     public void execute(TaskList tasks, Ui ui) throws FoyBotException {
         ArrayList<Task> matches = tasks.findTasks(keyword);
+        assert matches.stream().allMatch(
+                t -> t.toString().toLowerCase().contains(keyword.toLowerCase()))
+                : "All find results should contain the search keyword";
 
         if (matches.isEmpty()) {
             ui.showMessage("No matching tasks found.");
