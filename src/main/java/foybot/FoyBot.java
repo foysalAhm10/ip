@@ -37,8 +37,8 @@ public class FoyBot {
             loadedTasks = new TaskList(storage.load());
         } catch (FoyBotException e) {
             loadedTasks = new TaskList();
-            ui.showMessage("Error: " + e.getMessage());
-            ui.showError("Could not load saved tasks. Starting fresh.");
+            ui.showError(e.getMessage());
+            ui.showMessage("Could not load saved tasks. Starting fresh.\n");
         }
 
         tasks = loadedTasks;

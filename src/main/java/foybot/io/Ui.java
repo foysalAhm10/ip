@@ -7,6 +7,7 @@ import foybot.tools.TaskList;
  */
 public class Ui {
     public static final String INDENT = "        ";
+    public static final String ERROR_PREFIX = "[ERROR]";
     private final StringBuilder output = new StringBuilder();
 
     private void appendLine(String line) {
@@ -45,7 +46,7 @@ public class Ui {
      * @param message The error message to display.
      */
     public void showError(String message) {
-        appendLine(message);
+        appendLine(ERROR_PREFIX + " " + message);
     }
 
     /**

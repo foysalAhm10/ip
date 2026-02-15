@@ -3,6 +3,7 @@ package foybot.gui;
 import java.io.IOException;
 import java.util.Collections;
 
+import foybot.io.Ui;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -36,6 +37,11 @@ public class DialogBox extends HBox {
 
         dialog.setText(text);
         displayPicture.setImage(img);
+        
+        // Apply red gradient style for error messages
+        if (text.startsWith(Ui.ERROR_PREFIX)) {
+            dialog.getStyleClass().add("error-label");
+        }
     }
 
     /**
