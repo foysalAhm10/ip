@@ -7,6 +7,9 @@
 }
 
 .reply-label {
+    -fx-background-color: linear-gradient(to bottom right, #e6f9a8, #a5d86e);
+    -fx-border-color: #9ccc65 #7cb342 #8bc34a #558b2f;
+    -fx-border-width: 3px;
     -fx-background-radius: 1em 1em 1em 0;
     -fx-border-radius: 1em 1em 1em 0;
 }
