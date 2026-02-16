@@ -37,7 +37,7 @@ public class DialogBox extends HBox {
 
         dialog.setText(text);
         displayPicture.setImage(img);
-        
+
         // Apply red gradient style for error messages
         if (text.startsWith(Ui.ERROR_PREFIX)) {
             dialog.getStyleClass().add("error-label");
