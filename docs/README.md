@@ -7,7 +7,17 @@ FoyBot is a task-tracking chatbot for managing todos, deadlines, and events.
 ## Quick Start
 
 1. Ensure you are using **JDK 17**.
-2. From the project root, run: `./gradlew run`
+2. Run the application:
+
+    - If you downloaded the JAR from the release page, run from the directory containing `foyBot.jar`:
+      ```bash
+      java -jar foyBot.jar
+      ```
+    - If you cloned the repository (source code), run from the project root:
+
+      ```bash
+      ./gradlew run
+      ```
 3. Chat with FoyBot in the GUI window.
 
 ## Command Summary
